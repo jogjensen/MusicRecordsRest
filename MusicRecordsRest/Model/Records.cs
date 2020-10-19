@@ -12,22 +12,18 @@ namespace MusicRecordsRest.Model
         private string title;
         private string artist;
         private int yop;
-        private string albumRating;
-        private string songName;
-        private double length;
+        private int albumRating;
 
 
         #endregion
 
         #region Constructors
-        public Records(string title, string artist, int yop, string albumRating, string songName, double length)
+        public Records(string title, string artist, int yop, int albumRating)
         {
             this.title = title;
             this.artist = artist;
             this.yop = yop;
             this.albumRating = albumRating;
-            this.songName = songName;
-            this.length = length;
         }
 
         public Records()
@@ -55,23 +51,12 @@ namespace MusicRecordsRest.Model
             set => yop = value;
         }
 
-        public string AlbumRating
+        public int AlbumRating
         {
             get => albumRating;
             set => albumRating = value;
         }
 
-        public string SongName
-        {
-            get => songName;
-            set => songName = value;
-        }
-
-        public double Length
-        {
-            get => length;
-            set => length = value;
-        }
 
         #endregion
 
@@ -80,7 +65,7 @@ namespace MusicRecordsRest.Model
 
         public override string ToString()
         {
-            return $"{nameof(Title)}: {Title}, {nameof(Artist)}: {Artist}, {nameof(Yop)}: {Yop}, {nameof(AlbumRating)}: {AlbumRating}, {nameof(SongName)}: {SongName}, {nameof(Length)}: {Length}";
+            return $"{nameof(Title)}: {Title}, {nameof(Artist)}: {Artist}, {nameof(Yop)}: {Yop}, {nameof(AlbumRating)}: {AlbumRating}";
         }
 
         #endregion
