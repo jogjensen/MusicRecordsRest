@@ -17,9 +17,9 @@ namespace MusicRecordsRest.Controllers
 
         private static readonly List<Records> records = new List<Records>()
         {
-            new Records("Back in Black", "AC/DC", 1988, 5),
-            new Records("Madonna", "Into The Groove", 1984, 2),
-            new Records("Slayer", "Raining Blood", 1987, 4)
+            new Records(1,"Back in Black", "AC/DC", 1988, 5),
+            new Records(2,"Madonna", "Into The Groove", 1984, 2),
+            new Records(3,"Slayer", "Raining Blood", 1987, 4)
         };  
 
         #endregion
@@ -28,9 +28,9 @@ namespace MusicRecordsRest.Controllers
 
         // GET: api/<RecordsController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Records> Get()
         {
-            return new string[] { "value1", "value2" };
+            return records;
         }
 
         // GET api/<RecordsController>/5

@@ -9,21 +9,24 @@ namespace MusicRecordsRest.Model
     {
 
         #region Instance fields
-        private string title;
-        private string artist;
-        private int yop;
-        private int albumRating;
 
+        private int _id;
+        private string _title;
+        private string _artist;
+        private int _yop;
+        private int _albumRating;
 
         #endregion
 
         #region Constructors
-        public Records(string title, string artist, int yop, int albumRating)
+
+        public Records(int id, string title, string artist, int yop, int albumRating)
         {
-            this.title = title;
-            this.artist = artist;
-            this.yop = yop;
-            this.albumRating = albumRating;
+            _id = id;
+            _title = title;
+            _artist = artist;
+            _yop = yop;
+            _albumRating = albumRating;
         }
 
         public Records()
@@ -33,30 +36,35 @@ namespace MusicRecordsRest.Model
 
         #region Properties
 
+        public int Id
+        {
+            get => _id;
+            set => _id = value;
+        }
+
         public string Title
         {
-            get => title;
-            set => title = value;
+            get => _title;
+            set => _title = value;
         }
 
         public string Artist
         {
-            get => artist;
-            set => artist = value;
+            get => _artist;
+            set => _artist = value;
         }
 
         public int Yop
         {
-            get => yop;
-            set => yop = value;
+            get => _yop;
+            set => _yop = value;
         }
 
         public int AlbumRating
         {
-            get => albumRating;
-            set => albumRating = value;
+            get => _albumRating;
+            set => _albumRating = value;
         }
-
 
         #endregion
 
@@ -65,7 +73,7 @@ namespace MusicRecordsRest.Model
 
         public override string ToString()
         {
-            return $"{nameof(Title)}: {Title}, {nameof(Artist)}: {Artist}, {nameof(Yop)}: {Yop}, {nameof(AlbumRating)}: {AlbumRating}";
+            return $"{nameof(Id)}: {Id}, {nameof(Title)}: {Title}, {nameof(Artist)}: {Artist}, {nameof(Yop)}: {Yop}, {nameof(AlbumRating)}: {AlbumRating}";
         }
 
         #endregion
