@@ -27,6 +27,8 @@ namespace MusicRecordsRest
         {
             services.AddControllers();
 
+            services.AddCors();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Records API", Version = "v1.0" });
@@ -51,6 +53,10 @@ namespace MusicRecordsRest
             {
                 endpoints.MapControllers();
             });
+
+            app.UseCors(
+                options => options.AllowAnyHeader().AllowAnyOrigin().WithMethods("GET", "PUT")
+            );
 
             app.UseSwagger();
             app.UseSwaggerUI(c =>
