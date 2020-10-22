@@ -19,6 +19,15 @@ namespace MusicRecordsRest.Model.Tests
         //    records = new Records();
         //}
 
+        ////tester listen fa crontrolleren
+        //[TestMethod()]
+        //public void RecordGetList()
+        //{
+        //    Assert.IsTrue(_record < 2);
+
+        //}
+
+
         //Constructor test
         [TestMethod()]
         public void RecordsConstructorTest()
@@ -32,12 +41,7 @@ namespace MusicRecordsRest.Model.Tests
             Assert.AreEqual(5, 5);
         }
 
-        //tester listen fa crontrolleren
-        [TestMethod()]
-        public void RecordGetList()
-        { 
-
-        }
+      
         
 
     }
