@@ -13,11 +13,11 @@ namespace MusicRecordsRest.Model.Tests
         private RecordsController _record = new RecordsController();
         private Records records = new Records(1, "Niqulay", "Niko", 2000, 5);
 
-        //[TestInitialize]
-        //public ShowAllRestTest()
-        //{
-        //    records = new Records();
-        //}
+        [TestInitialize]
+        public ShowAllRestTest()
+        {
+            records = new Records();
+        }
 
         //Constructor test
         [TestMethod()]
@@ -36,9 +36,8 @@ namespace MusicRecordsRest.Model.Tests
         [TestMethod()]
         public void RecordGetList()
         { 
-
+            
         }
-        
 
     }
 }
