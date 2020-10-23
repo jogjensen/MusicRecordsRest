@@ -49,7 +49,7 @@ namespace MusicRecordsRest.Controllers
 
         // PUT api/<RecordsController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] Records value)
+        public int Put(int id, [FromBody] Records value)
         {
             Records records = Get(id);
             if (records != null)
@@ -59,7 +59,10 @@ namespace MusicRecordsRest.Controllers
                 records.Artist = value.Artist;
                 records.Yop = value.Yop;
                 records.AlbumRating = value.AlbumRating;
+
+                return 1;
             }
+            return 0;
         }
 
         // DELETE api/<RecordsController>/5
