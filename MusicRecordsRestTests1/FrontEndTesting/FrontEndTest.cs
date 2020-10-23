@@ -25,22 +25,30 @@ namespace MusicRecordsRestTests1.FrontEndTesting
         [TestMethod]
         public void TestAfTitel()
         {
-            _driver.Navigate().GoToUrl("https://drrecord.azurewebsites.net");
+            //_driver.Navigate().GoToUrl("https://drrecord.azurewebsites.net");
+            _driver.Navigate().GoToUrl("http://localhost:3000/");
             string title = _driver.Title;
             Assert.AreEqual("Hello app",title);
 
 //            WebDriverWait wait = new WebDriverWait();
         }
 
+        [ClassCleanup]
+        public static void TearDown()
+        {
+            _driver.Dispose();
+        }
+
         [TestMethod]
         public void TestAfArtist()
-        {
-
-            _driver.Navigate().GoToUrl("https://drrecord.azurewebsites.net");
+        {                             
+            //_driver.Navigate().GoToUrl("https://drrecord.azurewebsites.net");
+            _driver.Navigate().GoToUrl("http://localhost:3000/");
 
             WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
-            IWebElement Records = wait.Until(d => d.FindElement(By.Id("records")));
+            IWebElement Records = wait.Until(d => d.FindElement(By.Id("recordId")));
             Assert.IsTrue(Records.Text.Contains("AC/DC"));
+            
         }
 
     }
