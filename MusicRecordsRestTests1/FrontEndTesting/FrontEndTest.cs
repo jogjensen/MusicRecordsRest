@@ -4,6 +4,7 @@ using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 
 namespace MusicRecordsRestTests1.FrontEndTesting
@@ -12,13 +13,21 @@ namespace MusicRecordsRestTests1.FrontEndTesting
     [TestClass()]
     public class FrontEndTest
     {
-        private static readonly string DriverDirectory = "C:\\BrowserDrivers\\Google";
+
+        //Googledriver
+        //private static readonly string DriverDirectory = "C:\\BrowserDrivers\\Google";
+
+        //Firefox driver
+        private static readonly string DriverDirectory = "C:\\BrowserDrivers\\FireFox";
+
+
         private static IWebDriver _driver;
 
         [ClassInitialize]
         public static void Setup(TestContext context)
         {
-            _driver = new ChromeDriver(DriverDirectory);
+            //_driver = new ChromeDriver(DriverDirectory);
+            _driver = new FirefoxDriver(DriverDirectory);
         }
 
 
