@@ -64,13 +64,16 @@ namespace MusicRecordsRest.Controllers
 
         // DELETE api/<RecordsController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public int Delete(int id)
         {
             Records records = Get(id);
             if (records != null)
             {
                 RecordsController.records.Remove(records);
+                return 1;
             }
+
+            return 0;
         }
     }
 }
