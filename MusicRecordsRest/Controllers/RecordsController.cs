@@ -38,7 +38,14 @@ namespace MusicRecordsRest.Controllers
         public Records Get(int id)
         {
             return records.Find(r => r.Id == id);
-        }   
+        }
+
+        // GET api/<RecordsController>/5
+        [HttpGet("artist/{artist}")]
+        public List<Records> Get(string artist)
+        {
+            return records.FindAll(a => a.Artist == artist);
+        }
 
         // POST api/<RecordsController>
         [HttpPost]
