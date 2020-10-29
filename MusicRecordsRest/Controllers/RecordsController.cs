@@ -17,7 +17,7 @@ namespace MusicRecordsRest.Controllers
     {
         #region StaticList
 
-        private static readonly List<Records> records = new List<Records>()
+        private static List<Records> records = new List<Records>()
         {
             new Records(1,"Back in Black", "AC/DC", 1988, 5),
             new Records(2,"Into The Groove", "Madonna", 1984, 2),
@@ -38,7 +38,7 @@ namespace MusicRecordsRest.Controllers
         public Records Get(int id)
         {
             return records.Find(r => r.Id == id);
-        }
+        }   
 
         // POST api/<RecordsController>
         [HttpPost]
